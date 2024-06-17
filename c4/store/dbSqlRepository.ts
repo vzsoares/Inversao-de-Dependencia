@@ -1,13 +1,14 @@
 import sqlitedb from "better-sqlite3";
 import { createTable } from "../../default";
+import { Product, Store } from "../types";
 
-const dbusers = "./db.db";
-const db = new sqlitedb(dbusers);
+const dbproducts = "./db.db";
+const db = new sqlitedb(dbproducts);
 
 db.exec(createTable);
 
-export default class dbSqlRepository implements Store {
-    public getProduct(id: number) {
+export class dbSqlRepository implements Store {
+    public async getProduct(id: number) {
         const product = db
             .prepare("SELECT * FROM products WHERE id = ?")
             .get(id) as Product;

@@ -1,11 +1,13 @@
+import { Domain, Store } from "../types";
+
 export class AppDomain implements Domain {
     store: Store;
     constructor(s: Store) {
         this.store = s;
     }
 
-    getProduct(id: number) {
-        const product = this.store.getProduct(id);
+    async getProduct(id: number) {
+        const product = await this.store.getProduct(id);
         if (product.status === 2) {
             throw new Error("must not be status 2");
         }

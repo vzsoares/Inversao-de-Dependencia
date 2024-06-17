@@ -1,22 +1,22 @@
-type Product = {
+export type Product = {
     id: number;
     status: number;
     name: string;
 };
 
-interface Store {
-    getProduct: (id: number) => Product;
+export interface Store {
+    getProduct: (id: number) => Promise<Product>;
 }
 
-interface Domain {
+export interface Domain {
     store: Store;
-    getProduct: (id: number) => Product;
+    getProduct: (id: number) => Promise<Product>;
 }
 
-type ApiReturn = {
+export type ApiReturn = {
     statusCode: number;
     body: string;
     headers?: {};
 };
 
-type QueueReturn = string;
+export type QueueReturn = string;
