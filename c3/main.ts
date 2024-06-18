@@ -1,16 +1,16 @@
 import { AppDomain } from "./domain/domain";
-import { GetProductApiHandler } from "./handlers/getProductApiHandler";
-import { GetProductQueueHandler } from "./handlers/getProductQueueHandler";
 import { dbSqlRepository } from "./store/dbSqlRepository";
 
-async function main() {
+async function main(id: number) {
     const store = new dbSqlRepository();
     const domain = new AppDomain(store);
-    // const handler = new GetProductApiHandler(domain);
-    const handler = new GetProductQueueHandler(domain);
 
-    const product = await handler.handle(1);
-    return product;
+    const product = await domain.getProduct(id);
+    const res = {
+        statusCode: 200,
+        body: JSON.stringify(product),
+    };
+    return res;
 }
 
-main().then((v) => console.log(v));
+main(2).then((v) => console.log(v));
