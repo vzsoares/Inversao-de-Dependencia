@@ -1,6 +1,6 @@
 import sqlitedb from "better-sqlite3";
-import { createTable } from "../default";
-import { Product, Store } from "./types";
+import { createTable } from "../../default";
+import { Product, Store } from "../types";
 
 const dbproducts = "./db.db";
 const db = new sqlitedb(dbproducts);

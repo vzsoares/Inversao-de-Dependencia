@@ -1,4 +1,4 @@
-import { dbSqlRepository } from "./dbSqlRepository";
+import { dbSqlRepository } from "./store/dbSqlRepository";
 
 async function main(id: number) {
     const product = await new dbSqlRepository().getProduct(id);
