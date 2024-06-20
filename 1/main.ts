@@ -14,12 +14,15 @@ const db = new sqlitedb(dbproducts);
 db.exec(createTable);
 
 async function main(id: number) {
+    // data logic
     const product = (await db
         .prepare("SELECT * FROM products WHERE id = ?")
         .get(id)) as Product;
+    // bussiness logic
     if (product.status === 2) {
         throw new Error("must not be status 2");
     }
+    // presentation
     return product;
 }
 

@@ -1,6 +1,7 @@
 import { ApiReturn, Domain } from "../types";
 import { Handler } from "./handler";
 
+// presentation layer implementation
 export class GetProductApiHandler extends Handler<ApiReturn, [number]> {
     constructor(d: Domain) {
         super(d);

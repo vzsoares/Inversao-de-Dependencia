@@ -4,6 +4,8 @@ export type Product = {
     name: string;
 };
 
+// data layer
+// all implementations will follow
 export interface Store {
     getProduct: (id: number) => Promise<Product>;
 }

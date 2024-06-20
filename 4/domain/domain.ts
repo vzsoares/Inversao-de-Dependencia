@@ -1,5 +1,6 @@
 import { Domain, Store } from "../types";
 
+// domain layer implementation
 export class AppDomain implements Domain {
     store: Store;
     constructor(s: Store) {

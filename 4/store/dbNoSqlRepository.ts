@@ -5,6 +5,7 @@ import { Product, Store } from "../types";
 const defaultData = { products };
 const db = JSONFilePreset("db.json", defaultData);
 
+// data layer implementation
 export class DbNoSqlRepository implements Store {
     public async getProduct(id: number) {
         const product = await db.then((d) => {

@@ -7,6 +7,7 @@ const db = new sqlitedb(dbproducts);
 
 db.exec(createTable);
 
+// data layer implementation
 export class dbSqlRepository implements Store {
     public async getProduct(id: number) {
         const product = db
