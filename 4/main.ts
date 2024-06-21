@@ -1,4 +1,4 @@
-import { AppDomain } from "./domain/domain";
+import { FooDomain } from "./domain/fooDomain";
 import { GetProductQueueHandler } from "./handlers/getProductQueueHandler";
 import { dbSqlRepository } from "./store/dbSqlRepository";
 
@@ -6,7 +6,7 @@ async function main(id: number) {
     // access data layer
     const store = new dbSqlRepository();
     // access domain layer
-    const domain = new AppDomain(store);
+    const domain = new FooDomain(store);
     // access presentation layer
     const handler = new GetProductQueueHandler(domain);
 

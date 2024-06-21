@@ -1,7 +1,7 @@
 import { Domain, Store } from "../types";
 
-// domain implementation
-export class AppDomain implements Domain {
+// domain layer implementation
+export class FooDomain implements Domain {
     store: Store;
     constructor(s: Store) {
         this.store = s;
