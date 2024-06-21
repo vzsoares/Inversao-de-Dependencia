@@ -54,6 +54,7 @@ A implementação ocorrerá em 4 passos, conforme a [estrutura de arquivos](<htt
 ├── main.ts
 └── types.ts
 ```
+
 Em cada passo, representado pelo nome das pastas, vamos abstrair uma das camadas mencionadas.
 
 ### 1️⃣:
@@ -62,15 +63,15 @@ Na primeira iteração, a aplicação está totalmente acoplada e não reutiliz�
 
 ### 2️⃣:
 
-A camada de persistência é normalmente a primeira a ser extraída, pois permite que toda a aplicação tenha acesso uniforme às informações.
+Aqui é criado a camada de persistência, que é normalmente a primeira a ser extraída, pois permite que toda a aplicação tenha acesso uniforme às informações.
 
 ### 3️⃣:
 
-Na terceira etapa, abstraímos a camada de domínio, que contém as regras de negócio que regem a legalidade de algumas operações.
+Na terceira etapa, abstraímos a camada de domínio, que contém as regras de negócio que regem a legalidade das operações.
 
 ### 4️⃣:
 
-Por fim, uniformizamos a disponibilização da aplicação para o mundo exterior, utilizando exemplos de API e SQS, que são casos de uso comuns.
+Por fim, uniformizamos a disponibilização da aplicação para o mundo exterior através de handlers, utilizando exemplos de API e SQS, que são casos de uso comuns.
 
 ---
 
@@ -86,15 +87,13 @@ Isso adiciona complexidade e requer mais configuração e planejamento. Talvez n
 
 Agora que você conhece DI, observe em suas aplicações como poderia implementar algo similar, seguindo este princípio! ❤️
 
-</br>
-
 ---
 
-### 📖 Referências:
+### 📐 Desafio:
 
-- https://medium.com/@deanrubin/the-three-layered-architecture-fe30cb0e4a6
-- https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30
-- https://medium.com/@tbaragao/solid-d-i-p-dependency-inversion-principle-e87527f8d0be
+Faça você mesmo, baixe o repositório e delete as pastas 2,3 e 4. Depois implemente a inversão de dependência.
+
+
 
 ### 🤓 Rodando localmente:
 
