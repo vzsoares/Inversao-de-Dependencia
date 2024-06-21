@@ -28,36 +28,35 @@ Para entender melhor, vamos acompanhar a seguir:
 
 ### 🚀 Implementação:
 
-Essa implementação irá ocorrer em 4 passos, que podem ser observados pela [estrutura de arquivos](<https://tree.nathanfriend.io/?s=(%27options!(%27fancy!true~fullPatYtrailingSlasYrootDot!true)~j(%27j%271Tnoss7k7itx5%2C%20_tudCztar%C3%A1%20acoplado-UMFF2TkCpaXBKZpxsistencia8%20%23iX%20feitCcoLuLpattxn%20chamadCV6IcriamoGtambeLuLarquivCpar7WKtipoGd7aplic5FF3T_vamosBKaGregraGEnegocio9*8wNo0IcriadCpar7refor%C3%A7aK7possibilidaEEaltx56FF4Te%20poKfimBmoGZaprzent59-hJs%2FOApiHJMIoGhJGatendeLum7neczsidaEWOQueueHJM8wNo06-*%27)~vxsion!%271%27)*%20%20-F*0SqlVM5a%C3%A7%C3%A3o6-UM-typzM7a%208-store%2Fw09-doU%2F-*fooDoUMB%20dzacoplaCo%20Ede%20F%5CnGs%20I*%23JandlxKr%20Lm%20M.tsO-*getProductT%2FIUmainVRepositoryWzpecificaXssC%C3%A9Yh!false~Z7camad7E_aqui%20jsource!kprimeirw-*dbxerzes%01zxwkj_ZYXWVUTOMLKJIGFECB987650-*>) a seguir
+Essa implementação irá ocorrer em 4 passos, que podem ser observados pela [estrutura de arquivos](<https://tree.nathanfriend.io/?s=(%27options!(%27fancy!true~fullPathW~trailingSlashW~rootDotW)~source!(%27source!%271TAqui%20tudYjtar%C3%A1%20Kdo*X76temo7apenaM%7D%3BJJ2TVamo7come%C3%A7awdjKndYkpersist%C3%AAnciaB%20Obasead9eZRository%20Pattern8-6CriamoMpar9_wo7tipo7d9aplic5JJ3TDjKremo7a7regra7Fneg%C3%B3cioG7Od9regra7FfooB*-dbNo0-6ExemplificandY9possibilidaFFalter58JJ4TE%20powfiZdjKmo7kaprjent5Gs*hLs%2FUApiHLz-6hL7atendeZum9necjsidaF_UQueueHLzB*-dbNo08*-%27)~version!%271%27)*J--%20%200SqlRepositoryz5a%C3%A7%C3%A3o6%23%207s%208*Xs*typjz9a%20B*store%2F*-db0Fde%20G*domain%2F*-fooDoXJ%5CnKacoplaLandlerM7uZarquivYO6Implement5%20T%2F-6U*-getProductW!falseXmain.tYo%20Zm%20_jpecificajesk9camad9Fwr%20z.ts%01zwkj_ZYXWUTOMLKJGFB987650-*>) a seguir
 
 ```sh
-.
-├── 1/  # nossa primeira iteração, aqui tudo estará acoplado
-│   └── main.ts
-├── 2/  # primeiro passo é desacoplar a camada de persistência
-│   ├── store/
-│   │   └── dbSqlRepository.ts # isso é feito com um pattern chamado Repository
-│   ├── main.ts
-│   └── types.ts  # criamos também um arquivo para especificar tipos da aplicação
-├── 3/  # aqui vamos desacoplar as regras de negócio
-│   ├── domain/
-│   │   └── fooDomain.ts
-│   ├── store/
-│   │   ├── dbSqlRepository.ts
-│   │   └── dbNoSqlRepository.ts  # criado para reforçar a possibilidade de alteração
-│   ├── main.ts
-│   └── types.ts
-└── 4/  # e por fim desacoplamos a camada de apresentação
-    ├── domain/
-    │   └── fooDomain.ts
-    ├── handlers/
-    │   ├── getProductApiHandler.ts  # os handlers atendem a uma necessidade específica
-    │   ├── getProductQueueHandler.ts
-    ├── store/
-    │   ├── dbSqlRepository.ts
-    │   └── dbNoSqlRepository.ts
-    ├── main.ts
-    └── types.ts
+1/  # Aqui tudo estará acoplado
+└── main.ts # temos apenas um arquivo );
+2/  # Vamos começar desacoplando a camada de persistência
+├── store/
+│   └── dbSqlRepository.ts # Implementação baseada em Rository Pattern
+├── main.ts
+└── types.ts  # Criamos um arquivo para especificar os tipos da aplicação
+3/  # Desacoplaremos as regras de negócio
+├── domain/
+│   └── fooDomain.ts # Implementação da regras de foo
+├── store/
+│   ├── dbSqlRepository.ts
+│   └── dbNoSqlRepository.ts  # Exemplificando a possibilidade de alteração
+├── main.ts
+└── types.ts
+4/  # E por fim desacoplamos a camada de apresentação
+├── domain/
+│   └── fooDomain.ts
+├── handlers/
+│   ├── getProductApiHandler.ts  # handlers atendem uma necessidade especifica
+│   └── getProductQueueHandler.ts
+├── store/
+│   ├── dbSqlRepository.ts
+│   └── dbNoSqlRepository.ts
+├── main.ts
+└── types.ts
 ```
 
 Em cada passo, representado pelo nome das pastas, vamos abstrair (extrair) uma das camadas mencionadas.
