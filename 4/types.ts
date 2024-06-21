@@ -24,3 +24,12 @@ export type ApiReturn = {
 
 // another presentation type
 export type QueueReturn = string;
+
+// presentation layer interface
+// will be in the tip of our application
+// it's also generic, because handler are usually very specific
+export interface Handler<T, R> {
+    domain: Domain;
+    handle: (r: R) => Promise<T>;
+  }
+  

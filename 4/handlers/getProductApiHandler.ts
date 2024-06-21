@@ -1,10 +1,10 @@
-import { ApiReturn, Domain } from "../types";
-import { Handler } from "./handler";
+import { ApiReturn, Domain, Handler } from "../types";
 
 // presentation layer implementation
-export class GetProductApiHandler extends Handler<ApiReturn, [number]> {
+export class GetProductApiHandler implements Handler<ApiReturn, number> {
+    domain: Domain
     constructor(d: Domain) {
-        super(d);
+        this.domain = d
     }
     async handle(id: number) {
         const product = await this.domain.getProduct(id);

@@ -28,7 +28,7 @@ Para entender melhor vamos acompanhar a seguir:
 
 ### 🚀 Implementação:
 
-Essa implementação irá ocorrer em 4 passos, que pode ser observada pela [estrutura de arquivos](<https://tree.nathanfriend.io/?s=(%27options!(%27fancy!true~fullPatYtrailingSlasYrootDot!true)~w(%27w%271Unoss7x7iter5%2C%20jtud9_tar%C3%A1%20acoplado-VMII2Ux9paOKLZpersistenciaB%20%23iOfeit9coJuJpattern%20chamad9W6FcriamoCtambeJuJarquiv9par7XLtipoCd7aplic5II3UjvamoCKLaCregraCGnegocioE*BkdbNo0Fcriad9par7refor%C3%A7aL7possibilidaGGalter56II4Ue%20poLfiJKmoCZapr_ent5E-h8s%2FTApiHzCatendeJum7nec_sidaGXTQueueH8Mkhz%20deveJseL_tendid9d9h8%20baseBkdbNo06k%27)~version!%271%27)*%20%20-I*0SqlWM5a%C3%A7%C3%A3o6-VM-typ_M7a%208andler9o%20B-store%2Fkdb0Cs%20E-doV%2FkfooDoVMF*%23Gde%20I%5CnJm%20Kd_acoplaLr%20M.tsOss9%C3%A9%20TkgetProductU%2FFVmainWRepositoryX_pecificaYh!false~Z7camad7G_esjaqui%20k-*wsource!xprimeirz8MFoCh8%01zxwkj_ZYXWVUTOMLKJIGFECB987650-*>) a seguir
+Essa implementação irá ocorrer em 4 passos, que pode ser observada pela [estrutura de arquivos](<https://tree.nathanfriend.io/?s=(%27options!(%27fancy!true~fullPatYtrailingSlasYrootDot!true)~j(%27j%271Tnoss7k7itx5%2C%20_tudCztar%C3%A1%20acoplado-UMFF2TkCpaXBKZpxsistencia8%20%23iX%20feitCcoLuLpattxn%20chamadCV6IcriamoGtambeLuLarquivCpar7WKtipoGd7aplic5FF3T_vamosBKaGregraGEnegocio9*8wNo0IcriadCpar7refor%C3%A7aK7possibilidaEEaltx56FF4Te%20poKfimBmoGZaprzent59-hJs%2FOApiHJMIoGhJGatendeLum7neczsidaEWOQueueHJM8wNo06-*%27)~vxsion!%271%27)*%20%20-F*0SqlVM5a%C3%A7%C3%A3o6-UM-typzM7a%208-store%2Fw09-doU%2F-*fooDoUMB%20dzacoplaCo%20Ede%20F%5CnGs%20I*%23JandlxKr%20Lm%20M.tsO-*getProductT%2FIUmainVRepositoryWzpecificaXssC%C3%A9Yh!false~Z7camad7E_aqui%20jsource!kprimeirw-*dbxerzes%01zxwkj_ZYXWVUTOMLKJIGFECB987650-*>) a seguir
 
 ```sh
 .
@@ -53,7 +53,6 @@ Essa implementação irá ocorrer em 4 passos, que pode ser observada pela [estr
     ├── handlers/
     │   ├── getProductApiHandler.ts  #os handlers atendem uma necessidade especifica
     │   ├── getProductQueueHandler.ts
-    │   └── handler.ts  #os handler devem ser estendido do handler base
     ├── store/
     │   ├── dbSqlRepository.ts
     │   └── dbNoSqlRepository.ts

@@ -10,7 +10,7 @@ export interface Store {
 }
 
 // domain layer interface
-// all domain implementations will folow this
+// all domain implementations will follow this
 export interface Domain {
     store: Store;
     getProduct: (id: number) => Promise<Product>;
