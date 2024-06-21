@@ -54,24 +54,23 @@ A implementação ocorrerá em 4 passos, conforme a [estrutura de arquivos](<htt
 ├── main.ts
 └── types.ts
 ```
-
-Em cada passo, representado pelo nome das pastas, vamos abstrair (extrair) uma das camadas mencionadas.
+Em cada passo, representado pelo nome das pastas, vamos abstrair uma das camadas mencionadas.
 
 ### 1️⃣:
 
-Em nossa primeira iteração, temos a aplicação totalmente acoplada e nada reutilizável. Aqui, se precisarmos de uma mesma funcionalidade em outro lugar, seria necessário copiar e colar o código 😱
+Na primeira iteração, a aplicação está totalmente acoplada e não reutilizável. Se precisarmos da mesma funcionalidade em outro lugar, seria necessário copiar e colar o código 😱
 
 ### 2️⃣:
 
-Normalmente, a camada mais útil de se extrair é a de persistência, pois isso permite que toda a aplicação tenha um acesso à informação de forma uniforme.
+A camada de persistência é normalmente a primeira a ser extraída, pois permite que toda a aplicação tenha acesso uniforme às informações.
 
 ### 3️⃣:
 
-Agora, é abstraída a camada de domínio, que se caracteriza por regras de negócio, que regem a legalidade de algumas operações, por exemplo.
+Na terceira etapa, abstraímos a camada de domínio, que contém as regras de negócio que regem a legalidade de algumas operações.
 
 ### 4️⃣:
 
-Aqui vamos uniformizar como disponibilizar nossa aplicação para o mundo exterior, por isso temos exemplos de API e SQS, que são casos de uso muito comuns.
+Por fim, uniformizamos a disponibilização da aplicação para o mundo exterior, utilizando exemplos de API e SQS, que são casos de uso comuns.
 
 ---
 
@@ -81,11 +80,11 @@ Veja o que foi feito:
 
 </br>
 
-Ao final, podemos ver que, caso necessário, podemos escalar a aplicação de forma horizontal, ou seja, basta adicionar um novo módulo em sua devida camada e utilizar.
+Ao final, podemos escalar a aplicação horizontalmente, adicionando novos módulos em suas respectivas camadas.
 
-Isso, claro, adiciona complexidade na aplicação e requer mais configuração e planejamento. Talvez não seja necessário para algo muito pequeno. Mas é bom se prevenir, não é mesmo? 👼
+Isso adiciona complexidade e requer mais configuração e planejamento. Talvez não seja necessário para algo muito pequeno, mas é bom se prevenir, não é mesmo? 👼
 
-Agora que já sabe sobre DI, observe em aplicações que possua como você poderia implementar algo similar, seguindo este princípio! ❤️
+Agora que você conhece DI, observe em suas aplicações como poderia implementar algo similar, seguindo este princípio! ❤️
 
 </br>
 
