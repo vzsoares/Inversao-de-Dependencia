@@ -4,7 +4,7 @@
 
 </div>
 
-Nesse repositório, vamos implementar inversão de dependência ou DI (dependency inversion) na prática.
+Neste repositório, vamos implementar a inversão de dependência (Dependency Inversion - DI) na prática.
 
 <p align="center">
 <img src="static/preview.png" alt="main" width="600px"/>
@@ -16,41 +16,37 @@ Nesse repositório, vamos implementar inversão de dependência ou DI (dependenc
 
 </div>
 
-<!-- ## Sobre: -->
-
 ### 🤔 Contexto:
 
-Quando se trata de inversão de dependência em programação, falamos de desacoplar as regras, ou seja, abstrair (extrair) as regras para uma camada superior onde se pode lidar com esta camada de forma mais limpa.
+A inversão de dependência em programação é sobre desacoplar regras e abstraí-las para uma camada superior, permitindo uma gestão mais limpa e isolamento da regra. 
 
-Aqui, vamos implementar um padrão conhecido como Layered Architecture, onde separamos a camada de dados, domínio e apresentação na aplicação.
-
-Para entender melhor, vamos acompanhar a seguir:
+Vamos implementar a arquitetura em camadas (Layered Architecture), separando dados, domínio e apresentação.
 
 ### 🚀 Implementação:
 
-Essa implementação irá ocorrer em 4 passos, que podem ser observados pela [estrutura de arquivos](<https://tree.nathanfriend.io/?s=(%27options!(%27fancy!true~fullPathW~trailingSlashW~rootDotW)~source!(%27source!%271TAqui%20tudYjtar%C3%A1%20Kdo*X76temo7apenaM%7D%3BJJ2TVamo7come%C3%A7awdjKndYkpersist%C3%AAnciaB%20Obasead9eZRository%20Pattern8-6CriamoMpar9_wo7tipo7d9aplic5JJ3TDjKremo7a7regra7Fneg%C3%B3cioG7Od9regra7FfooB*-dbNo0-6ExemplificandY9possibilidaFFalter58JJ4TE%20powfiZdjKmo7kaprjent5Gs*hLs%2FUApiHLz-6hL7atendeZum9necjsidaF_UQueueHLzB*-dbNo08*-%27)~version!%271%27)*J--%20%200SqlRepositoryz5a%C3%A7%C3%A3o6%23%207s%208*Xs*typjz9a%20B*store%2F*-db0Fde%20G*domain%2F*-fooDoXJ%5CnKacoplaLandlerM7uZarquivYO6Implement5%20T%2F-6U*-getProductW!falseXmain.tYo%20Zm%20_jpecificajesk9camad9Fwr%20z.ts%01zwkj_ZYXWUTOMLKJGFB987650-*>) a seguir
+A implementação ocorrerá em 4 passos, conforme a [estrutura de arquivos](<https://tree.nathanfriend.io/?s=(%27options!(%27fancy!true~fullPathU~trailingSlashU~rootDotU)~z(%27z%271OAqui%20tudJXtar%C3%A1%20Kdo*W76tekapena7um%20arquivJ%7D%3BGG2OVakcome%C3%A7a_dXKndJZpersist%C3%AAncia9%20MbaseadCnJRository%20Pattern8-6ArquivJparCXpeciw_o7tipo7dCaplic5GG3ODXKrekYneg%C3%B3cioB7MdYfoo9*-dbNo0-6ExempliwndJCpossibilidaFFalter58GG4OE%20po_fim%2C%20dXKkZaprXent5Bs*hLs%2FTApiHLj-6HL7atendem%20necXsidade7Xpec%C3%ADwsTQueueHLj9*-dbNo08*-%27)~version!%271%27)*G--%20%200SqlRepositoryj5a%C3%A7%C3%A3o6%23%207s%208*Ws*typXj9*store%2F*-db0B*domain%2F*-fooDoWCa%20Fde%20G%5CnJo%20KacoplaLandlerM6Implement5%20O%2F-6T*-getProductU!falseWmain.tXesYa7regra7FZCcamadCF_r%20j.tskmo7wficazsource!%01zwkj_ZYXWUTOMLKJGFCB987650-*>) abaixo:
 
 ```sh
 1/  # Aqui tudo estará acoplado
 └── main.ts # temos apenas um arquivo );
 2/  # Vamos começar desacoplando a camada de persistência
 ├── store/
-│   └── dbSqlRepository.ts # Implementação baseada em Rository Pattern
+│   └── dbSqlRepository.ts # Implementação baseada no Rository Pattern
 ├── main.ts
-└── types.ts  # Criamos um arquivo para especificar os tipos da aplicação
+└── types.ts  # Arquivo para especificar os tipos da aplicação
 3/  # Desacoplaremos as regras de negócio
 ├── domain/
-│   └── fooDomain.ts # Implementação da regras de foo
+│   └── fooDomain.ts # Implementação das regras de foo
 ├── store/
 │   ├── dbSqlRepository.ts
 │   └── dbNoSqlRepository.ts  # Exemplificando a possibilidade de alteração
 ├── main.ts
 └── types.ts
-4/  # E por fim desacoplamos a camada de apresentação
+4/  # E por fim, desacoplamos a camada de apresentação
 ├── domain/
 │   └── fooDomain.ts
 ├── handlers/
-│   ├── getProductApiHandler.ts  # handlers atendem uma necessidade especifica
+│   ├── getProductApiHandler.ts  # Handlers atendem necessidades específicas
 │   └── getProductQueueHandler.ts
 ├── store/
 │   ├── dbSqlRepository.ts
