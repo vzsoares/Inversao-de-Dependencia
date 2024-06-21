@@ -13,6 +13,8 @@ const db = new sqlitedb(dbproducts);
 
 db.exec(createTable);
 
+// main function could be anything
+// e.g: express controller, lambda function...
 async function main(id: number) {
     // data logic
     const product = (await db
